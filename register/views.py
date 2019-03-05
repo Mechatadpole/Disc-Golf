@@ -6,3 +6,6 @@ def index(request):
 
 def home(request):
     return HttpResponse('<h1>Register Home</h1>')
+
+def signup(request):
+    return render(request, 'signup.html')
