@@ -5,7 +5,7 @@ def index(request):
     return render(request, 'register/index.html')
 
 def home(request):
-    return HttpResponse('<h1>Register Home</h1>')
+    return render(request, 'register/register.html')
 
 def signup(request):
-    return render(request, 'signup.html')
+    return render(request, 'register.html')
