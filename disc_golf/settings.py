@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'register',
     'course',
     'pages',
+    'login',
 ]
 
 MIDDLEWARE = [
