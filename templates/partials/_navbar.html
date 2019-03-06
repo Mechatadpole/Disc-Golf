@@ -1,15 +1,3 @@
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Disc Golf</title>
-</head>
-<body>
-    
-</body>
-</html> {% endcomment %}
 
 <div class="my_navbar navbar navbar-expand-md">
     <a href="{% url 'pages-home' %}" class="navbar-brand my_brand">Disc Golf</a>
@@ -21,6 +9,7 @@
         <div class="navbar-nav ml-auto">
             <a href="{% url 'pages-home' %}" class="nav-item nav-link my_links">Home</a>
             <a href="{% url 'courseHome' %}" class="nav-item nav-link my_links">Courses</a>
+            <a href="{% url 'addCourse' %}" class="nav-item nav-link my_links">Playlist</a>                   
         </div>
     </div>
 </div>
