@@ -1,6 +1,43 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
 {% block content %}
+
+<html>
+  <head>
+    <title>Disc Golf</title>
+    ​<header style="width:100%; text-align:center; background-color:rgb(94, 255, 0);">  
+      <h1>Indy Disc Golf</h1>
+    </header>
+    <section style="width:70%; float: left; background-color: rgb(48, 202, 68);">        
+      <header style="text-align:center;">        
+          <h3>Welcome to the Disc Golf Home Page</h3>        
+      </header>
+    </section>  
+  </head>
+  <body>
+    ​<article style="width: 30%; float: right; background-color: rgba(109, 204, 132, 0.329);">      
+                
+      <header style="text-align:center; color: rgb(8, 193, 250);">          
+              <h2>About the creators</h2>      
+          
+      </header>      
+  
+      <section>          
+          <h4>Official Disc Golf Rules</h4>              
+          <a href="https://www.pdga.com/rules/official-rules-disc-golf">PDGA Official Rules</a>         
+          <h4>Replies</h4>              
+          <p>Way too sugary for me.</p>              
+          <p>Posted on <time datetime="2015-05-16 19:00">May 16</time> by Auri.</p>              
+          <p>I agree, the donut was great. Auri is weak!</p>              
+          <p>Posted on <time datetime="2015-05-17 19:00">May 17</time> by Jonas.</p>      
+      </section>
+  </article>​
+  </body>
+</html>
 
 
 
