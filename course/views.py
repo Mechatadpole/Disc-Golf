@@ -13,4 +13,4 @@ def add(request):
         added_course.save()
         return redirect('courseHome')
     
-    return render(request, 'courseHome/add')
+    return render(request, 'course/course_add.html')
