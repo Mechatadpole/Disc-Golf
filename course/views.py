@@ -10,8 +10,12 @@ def home(request):
 def add(request):
     # when the add function is requested, saves in any inputs of the given prompt on the course/add/ page and then redirects the user to the Couse page.
     if request.method == "POST":
-        added_course = models.Item(course_name=request.POST['Course Name'],city=request.POST['City'], holes=request.POST['Holes'], tee_type=request.POST['Tee Type'])
+        added_course = models.Course(course_name=request.POST['Course Name'],city=request.POST['City'], holes=request.POST['Holes'], tee_type=request.POST['Tee Type'])
         added_course.save()
         return redirect('courseHome')
     # If nothing is added into the addCourse prompt, reload the course_add.html page for re-entry of the prompt or to exit the page.
     return render(request, 'course/course_add.html')
+
+def course_list(request):
+    if request.method =="POST":
+        
