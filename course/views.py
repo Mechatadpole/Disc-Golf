@@ -5,7 +5,17 @@ from . import models
 
 def home(request):
     # when the home function is requested, redirects users to the course_list.html page
+    if request.method =="POST":
+        added_course = models.Course.objects.get(id=request.POST['id'])
+        my_item.save()
+    course_list_items = models.Course.objects
+
+    context = {
+        'course_list': course_list_items
+    }
+
     return render(request, 'course/course_list.html')
+    
 
 def add(request):
     # when the add function is requested, saves in any inputs of the given prompt on the course/add/ page and then redirects the user to the Couse page.
@@ -16,6 +26,6 @@ def add(request):
     # If nothing is added into the addCourse prompt, reload the course_add.html page for re-entry of the prompt or to exit the page.
     return render(request, 'course/course_add.html')
 
-def course_list(request):
-    if request.method =="POST":
-        
+
+    
+
