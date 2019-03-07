@@ -1,109 +1,58 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
 {% block content %}
 
+<html>
+  <head>
+    <title>Disc Golf</title>
+    ​<header style="width:100%; text-align:center; background-color:rgb(94, 255, 0);">  
+      <h1>Indy Disc Golf</h1>
+    </header>
+    <section style="width:70%; float: left; background-color: rgb(48, 202, 68);">        
+      <header style="text-align:center;">        
+          <h3>Welcome to the Disc Golf Home Page</h3>        
+      </header>
+    </section>  
+  </head>
+    ​<article style="width: 30%; float: right; background-color: rgba(109, 204, 132, 0.329);">      
+                
+      <header style="text-align:center; color: rgb(8, 193, 250);">          
+              <h2>Disc Golf Info</h2>      
+          
+      </header>      
+  
+      <section>          
+          <h4 style="text-align:center">Official Disc Golf Rules</h4>              
+          <p style="text-align:center">PDGA Rules: https://www.pdga.com/rules/official-rules-disc-golf</p>        
+          <h4 style="text-align:center">Places to buy frisbees</h4>              
+            <p style="text-align:center">Innova Discs: https://www.innovadiscs.com/disc-golf-discs/</p>
+          <br>
+            <p style="text-align:center">Discraft: https://www.discraft.com/disc-golf/</p>                   
+      </section>
+    </article>​
+</html>
 
-<!-- Section1 of Home Page -->
-
-
-
-
-<!-- #Carousel section2 on Home Page -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Garfield_the_Cat.svg/1200px-Garfield_the_Cat.svg.png" class="rounded-0" alt="...">
-          <span class="border border-danger"></span>
-      </div>
-      <div class="carousel-item">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/41L-cXv1SrL._SY445_.jpg" class="rounded-0" alt="...">
-        <span class="border border-danger"></span>
-      </div>
-      <div class="carousel-item">
-        <img src="https://discordemoji.com/assets/emoji/garfield.png" class="rounded-0" alt="...">
-        <span class="border border-danger"></span>
-      </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{% static 'img/bluebasket.jpg' %}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'img/holeTrees.jpg' %}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'img/man-throwing.jpg' %}" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'img/tournament.jpg' %}" alt="Fourth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'img/waterHole.jpg' %}" alt="Fifth slide">
     </div>
   </div>
-
-
-
-
-
-
-{% comment %} # Filler example from the THREE_PAGE_DEMO 
-<div class="container">
-        <div id="home_row" class="row">
-            <div class="col-sm-12 col-md-6">
-                <div id="home_card" class="card" style="width:260px;">
-                    <div id="home_img" class="card-img-top"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Your Grocery List</h5>
-                        <p class="card-text">Fill your shopping list with items, and track your progress when you are at the store.</p>
-                        <a href="{% url 'myList' %}" class="btn btn-success">Go To Your List</a>
-                    </div>
-                </div>
-            </div>
-        
-
-            <div id="my_carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="d-block w-100 carousel_image_1"></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-block w-100 carousel_image_2"></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-block w-100 carousel_image_3"></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-block w-100 carousel_image_4"></div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-            <div id="home_content" class="col-sm-12 col-md-6">
-                <div id="home_inner">
-                    <h3>Save time at the grocery store!</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, eveniet error! Placeat odio cumque nulla. Error, aliquam ipsa ipsam natus officiis aliquid similique non vel, excepturi maxime atque! Excepturi, nemo!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="home_lose_track">
-        <div class="container">
-            <h4>Never Lose Track Of What's In Your Cart</h4>
-            <br>
-            <p style="margin:0;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa aliquam quam labore unde. Deleniti, ipsum sed corporis, officiis consequuntur dicta quisquam soluta adipisci ducimus molestiae libero quidem illo architecto.
-                <br>
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque placeat ea non sint fuga quasi ut, ad in architecto labore distinctio at necessitatibus suscipit a maiores impedit incidunt, quia mollitia!
-            </p>
-        </div>
-    </div>
-    <div class="home_recipes">
-        <div class="container">
-            <h4 style="text-align:right;">Get Recipe Suggestions</h4>
-            <br>
-            <p >
-                Maybe one day, when I have more time, I will refactor this application with the ability to have more than one list, track your ingredients list by the recipes you made, and order groceries based on the new recipes you choose for the future.
-                <br>
-                <br>
-                I feel like this application really will help people minimize how much money they spend on groceries, and help regulate how much food we need to produce. This app will limit waste, and increase the ease of healthy choices.
-            </p>
-        </div>
-    </div>
-    {% endcomment %}
-
-
-
+</div>
 {% endblock %}

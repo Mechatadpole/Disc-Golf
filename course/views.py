@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from . import models
 
 def home(request):
-    return HttpResponse('<h1>Course Home</h1>')
+    return render(request, 'course/course_list.html')
 
 def add(request):
 
@@ -13,4 +13,4 @@ def add(request):
         added_course.save()
         return redirect('courseHome')
     
-    return render(request, 'courseHome/add')
+    return render(request, 'course/course_add.html')

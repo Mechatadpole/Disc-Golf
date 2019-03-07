@@ -1,5 +1,14 @@
-<div id="my_footer">
-    <p>
-        &copy; Disc Golf EFA 2019
-    </p>
-</div>
+<nav class="navbar fixed-bottom navbar-dark bg-info">
+  <a class="navbar-brand mb-0 h1">About The Creators</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="navbar-nav ml-auto">
+            <a href="{% url 'pages-home' %}" class="nav-item nav-link my_links">Group Members</a>
+            <a href="{% url 'pages-home' %}" class="nav-item nav-link my_links">Work Process</a>                   
+            <a href="{% url 'pages-home' %}" class="nav-item nav-link my_links">Site Goals</a>                
+        </div>
+    </div>
+</nav>

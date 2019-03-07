@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid" style="background-image: url({% static 'img/northview.jpg' %}); height: 650px;">
+  <div class="background">
+    <div class="row">
+      <div class="float-left">
+          <form>
+            <div class="form-group">
+               <input type="text" class="form-control" id="courseName" placeholder="Course Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="courseCity" placeholder="City Course is Located">
+            </div>
+            <div class="form-group" style="width: 150%">
+              <input type="text" class="form-control" id="coursHoles" placeholder="Holes (6, 9, 18, 24) ">
+            </div>
+            <div class="form-group" style="width: 150%">
+              <input type="text" class="form-control" id="courseTees" placeholder="Tee Types (concrete, dirt, grass, mixed, gravel)">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        <div class="float-right" style="width: 50%">
+      </div>
+    </div>
+  </div> 
+</div>
+
+{% endblock  %}
