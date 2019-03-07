@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# pip install django-external-urls -> needed
+
 INSTALLED_APPS = [   
     'django.contrib.admin',
     'django.contrib.auth',
