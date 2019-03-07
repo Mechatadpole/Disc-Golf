@@ -4,39 +4,44 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 
-{% block content %}
 
-<html>
-  <head>
+
+
+    
+  
+      {% comment %} The below section will be where the hyperlinks to the official Disc Golf rules will be and sites to buy disc golf accessories and items. {% endcomment %}
+      {% block content %}
+    ​<article style="width: 30%; float: right; background-color:  #343a40!important;">      
+                
+      <header style="text-align:center; color: white">          
+        <h2>Disc Golf Info</h2>      
+        <section>
+            <a href="https://www.pdga.com/rules/official-rules-disc-golf" target="_blank">PDGA Rules Site(ODDITY)</a>
+            <h4 style="text-align:center; color: white;">Official Disc Golf Rules</h4>    
+            <a href="https://www.pdga.com/rules/official-rules-disc-golf" target="_blank">PDGA Rules Site</a>
+            <h4 style="text-align:center; color: white;">Places to buy frisbees</h4>              
+            <a href="https://www.innovadiscs.com/disc-golf-discs/" target="_blank">Innova Discs</a>
+            <br> 
+            <a href="https://www.discraft.com/disc-golf/" target="_blank">Discraft</a>
+        </section>    
+      </header> 
+    ​</article>
     <title>Disc Golf</title>
-    ​<header style="width:100%; text-align:center; background-color: #343a40!important; color: white">  
+    ​<header style="width:100%; text-align:center; background-color: #343a40!important; color: white">
+         
       <h1>Indy Disc Golf</h1>
     </header>
     <section style="width:70%; float: left; background-color:  #343a40!important;">        
       <header style="text-align:center; color: white">        
           <h3>Welcome to the Disc Golf Home Page</h3>        
       </header>
-    </section>  
-  </head>
-    ​<article style="width: 30%; float: right; background-color:  #343a40!important;">      
-                
-      <header style="text-align:center; color: white">          
-              <h2>Disc Golf Info</h2>      
-              
-      </header>      
+    </section> 
   
-      {% comment %} The below section will be where the hyperlinks to the official Disc Golf rules will be and sites to buy disc golf accessories and items. {% endcomment %}
 
-      <section>
-        <h4 style="text-align:center; color: white;">Official Disc Golf Rules</h4>    
-        <a href="https://www.pdga.com/rules/official-rules-disc-golf" target="_blank">PDGA Rules Site</a>  
-        <h4 style="text-align:center; color: white;">Places to buy frisbees</h4>              
-        <a href="https://www.innovadiscs.com/disc-golf-discs/" target="_blank">Innova Discs</a>
-        <br>
-        <a href="https://www.discraft.com/disc-golf/" target="_blank">Discraft</a>   
-      </section>
-    </article>​
-</html>
+
+      
+    
+
 
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
