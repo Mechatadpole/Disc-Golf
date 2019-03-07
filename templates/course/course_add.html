@@ -6,18 +6,18 @@
   <div class="background">
     <div class="row">
       <div class="float-left">
-          <form>
+          <form class ="add_form" action="{% url 'addCourse' %}" method="POST">
             <div class="form-group">
-               <input type="text" class="form-control" id="courseName" placeholder="Course Name">
+               <input type="text" class="form-control" id="course_name" placeholder="Course Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="courseCity" placeholder="City Course is Located">
+              <input type="text" class="form-control" id="city" placeholder="City Course is Located">
             </div>
             <div class="form-group" style="width: 150%">
-              <input type="text" class="form-control" id="coursHoles" placeholder="Holes (6, 9, 18, 24) ">
+              <input type="text" class="form-control" id="holes" placeholder="Holes (6, 9, 18, 24) ">
             </div>
             <div class="form-group" style="width: 150%">
-              <input type="text" class="form-control" id="courseTees" placeholder="Tee Types (concrete, dirt, grass, mixed, gravel)">
+              <input type="text" class="form-control" id="tee_type" placeholder="Tee Types (concrete, dirt, grass, mixed, gravel)">
             </div>
             <button type="submit" class="btn btn-primary">Add Course</button>
           </form>
