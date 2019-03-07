@@ -18,6 +18,8 @@ from django.urls import path, include
 
 from register import views as register_views
 
+# All base page urls used inside of the Disc Golf project, starting up on the pages.urls page as the Home Page.
+
 urlpatterns = [
     path('', include('pages.urls')),
     path('register/', include('register.urls')),
