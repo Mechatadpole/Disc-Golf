@@ -14,13 +14,13 @@
             </thead>
             <tbody>
                 {% if course_list %}
-                    {% for course in course_list %}
+                    {% for courses in course_list %}
 
                         <tr>
-                            <td>{{ course.name }}</td>
-                             <td>{{ course.city }}</td>
-                            <td>${{ course.holes }}</td>
-                            <td>${{ course.tee_type }}</td>
+                            <td>{{ courses.name }}</td>
+                            <td>{{ courses.city }}</td>
+                            <td>{{ courses.holes }}</td>
+                            <td>{{ courses.tee_type }}</td>
                             <td>
                                 <form action="{% url 'couresHome' %}" method="POST">
                                     {% csrf_token %}
