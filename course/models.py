@@ -9,3 +9,6 @@ class Course(models.Model):
     city = models.CharField(max_length=40)
     holes = models.IntegerField(validators=[MinValueValidator(6), MaxValueValidator(36)])
     tee_type = models.CharField(max_length=8)
+
+    def __str__(self):
+        return self.course_name

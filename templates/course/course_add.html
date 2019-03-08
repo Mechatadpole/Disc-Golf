@@ -2,22 +2,28 @@
 {% load static %}
 {% block content %}
 
+
 <div class="container-fluid" style="background-image: url({% static 'img/northview.jpg' %}); height: 950px;  background-size: cover; background-position: 50%">
   <div class="background">
     <div class="row">
       <div class="float-left">
+          <br>
+          <br>
+          <br>
+          <br>
           <form class ="add_form" action="{% url 'addCourse' %}" method="POST">
+            {% csrf_token %}
             <div class="form-group">
-               <input type="text" class="form-control" id="course_name" placeholder="Course Name">
+               <input type="text" class="form-control" name="course_name" id="course_name" placeholder="Course Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="city" placeholder="City Course is Located in">
+              <input type="text" class="form-control" name="city" id="city" placeholder="City Course is Located in">
             </div>
             <div class="form-group" style="width: 150%">
-              <input type="text" class="form-control" id="holes" placeholder="Holes (6, 9, 18, 24) ">
+              <input type="text" class="form-control" id="holes" name="holes" placeholder="Holes (6, 9, 18, 24) ">
             </div>
             <div class="form-group" style="width: 150%">
-              <input type="text" class="form-control" id="tee_type" placeholder="Tee Types (concrete, dirt, grass, mixed, gravel)">
+              <input type="text" class="form-control" id="tee_type" name="tee_type" placeholder="Tee Types (concrete, dirt, grass, mixed, gravel)">
             </div>
             <button type="submit" class="btn btn-primary" style=" background-color: #343a40!important; border: none;">Add Course</button>
           </form>

@@ -7,7 +7,7 @@ def home(request):
     # when the home function is requested, redirects users to the course_list.html page
     if request.method =="POST":
         added_course = models.Course.objects.get(id=request.POST['id'])
-        my_item.save()
+        added_course.save()
     course_list_items = models.Course.objects
 
     context = {
@@ -20,9 +20,15 @@ def home(request):
 def add(request):
     # when the add function is requested, saves in any inputs of the given prompt on the course/add/ page and then redirects the user to the Couse page.
     if request.method == "POST":
-        added_course = models.Course(course_name=request.POST['Course Name'],city=request.POST['City'], holes=request.POST['Holes'], tee_type=request.POST['Tee Type'])
+        added_course = models.Course(course_name=request.POST['course_name'],city=request.POST['city'], holes=request.POST['holes'], tee_type=request.POST['tee_type'])
         added_course.save()
         return redirect('courseHome')
+    course_list_items = models.Course.objects
+
+    context = {
+        'course_list': course_list_items
+    }
+    
     # If nothing is added into the addCourse prompt, reload the course_add.html page for re-entry of the prompt or to exit the page.
     return render(request, 'course/course_add.html')
 
