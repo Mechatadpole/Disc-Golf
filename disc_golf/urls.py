@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from users import views as user_views
 from register import views as register_views
 
 # All base page urls used inside of the Disc Golf project, starting up on the pages.urls page as the Home Page.
 
 urlpatterns = [
     path('', include('pages.urls')),
-    path('register/', include('register.urls')),
+    path('register/', user_views.register, name='register'),
     path('admin/', admin.site.urls),
     path('course/', include('course.urls')),
     path('pages/', include('pages.urls')),
