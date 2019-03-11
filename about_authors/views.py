@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from . import models
 
 def members(request):
     return render(request, 'about_authors/group.html')
