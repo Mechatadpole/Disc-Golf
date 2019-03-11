@@ -11,7 +11,7 @@
         <div class="navbar-nav ml-auto">
             <a href="{% url 'courseHome' %}" class="nav-item nav-link my_links">Courses</a>
             <a href="{% url 'addCourse' %}" class="nav-item nav-link my_links">Add Course</a>                   
-            <a href="{% url 'loginHome' %}" class="nav-item nav-link my_links">Login</a>        
+            {% comment %} <a href="{% url 'loginHome' %}" class="nav-item nav-link my_links">Login</a>         {% endcomment %}
             {% comment %} <a href="{% url 'registerHome' %}" class="nav-item nav-link my_links">Sign Up</a>         {% endcomment %}
         </div>
     </div>
