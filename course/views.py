@@ -18,7 +18,7 @@ def home(request):
         "play_course": play_course
     }
 
-    return render(request, 'course/course_list.html')
+    return render(request, 'course/course_list.html', context=context)
     
 
 def add(request):
@@ -32,5 +32,5 @@ def add(request):
     return render(request, 'course/course_add.html')
 
 
-    
+
 
