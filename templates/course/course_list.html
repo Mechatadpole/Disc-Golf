@@ -25,7 +25,7 @@
                             <td>
                                 <form action="{% url 'couresHome' %}" method="POST">
                                     {% csrf_token %}
-                                    <input type="hidden" name="id" value='{{ course.id }}'>
+                                    <input type="hidden" name="id" value='{{ courses.id }}'>
                                     <input type="hidden" name="play" value=True>
                                     <input class="td_button btn btn-success" type="submit" value="Play Course">
                                    
@@ -80,7 +80,7 @@
                     {% endfor %}
                 {% else %}
                     <tr>
-                        <td>No Courses In Your List</td>
+                        <td>No Courses In Play List</td>
                         <td></td>
                         <td></td>
                         <td></td>
