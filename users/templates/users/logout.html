@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+<div class="container-fluid" style="background-color: rgb(41,238,156)">
     <h2>You have been logged out</h2>
     <div class="border-top pt-3">
         <small class="text-muted">
             <a href="{% url 'login' %}">Log In Again</a>
         </small>
     </div>
+</div>
 {% endblock content %}
