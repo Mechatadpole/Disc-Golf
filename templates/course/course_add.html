@@ -19,10 +19,23 @@
               <input type="text" class="form-control" name="city" id="city" placeholder="City Course is Located in">
             </div>
             <div class="form-group" style="width: 150%">
-              <input type="text" class="form-control" id="holes" name="holes" placeholder="Holes (6, 9, 18, 24) ">
+                <select class="custom-select">
+                    <option selected>Holes</option>
+                    <option value="1">6</option>
+                    <option value="2">9</option>
+                    <option value="3">18</option>
+                    <option value="4">24</option>
+                </select>
             </div>
             <div class="form-group" style="width: 150%">
-              <input type="text" class="form-control" id="tee_type" name="tee_type" placeholder="Tee Types (concrete, dirt, grass, mixed, gravel)">
+                <select class="custom-select">
+                    <option selected>Tee Types</option>
+                    <option value="1">Concrete</option>
+                    <option value="2">Dirt</option>
+                    <option value="3">Grass</option>
+                    <option value="4">Gravel</option>
+                    <option value="5">Mixed</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary" style=" background-color: #343a40!important; border: none;">Add Course</button>
           </form>

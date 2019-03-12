@@ -14,6 +14,19 @@
             <br>
             <form class ="add_form" action="{% url 'goalsHome' %}" method="POST">
                 {% csrf_token %}
+                <div>
+                    <select class="custom-select">
+                        <option selected>Tee Types</option>
+                        <option value="1">6</option>
+                        <option value="2">9</option>
+                        <option value="3">18</option>
+                        <option value="4">24</option>
+                    </select>
+                </div>
+                <br>
+
+
+
                 <div class="form-group">
                     <input type="text" class="form-control" name="course_name" id="course_name" placeholder="Course Name">
                  </div>
@@ -32,22 +45,32 @@
                 </div>
                  <button type="submit" class="btn btn-primary" style=" background-color: #343a40!important; border: none;">Submit Review</button>
                </form>
-               <div class="txt-center">
+               <br>
+               <br>
+               <!-- <div class="txt-center">
                     <form>
-                        <div class="rating">
-                            <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
-                            <label for="star5">☆</label>
-                            <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
-                            <label for="star4">☆</label>
-                            <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
-                            <label for="star3">☆</label>
-                            <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
-                            <label for="star2">☆</label>
-                            <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
-                            <label for="star1">☆</label>
-                            <div class="clear"></div>
-                        </div>
-                    </form>
-                </div>
+                          <div class="rating">
+                              <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                              <label for="star5" >☆</label>
+                              <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                              <label for="star4" >☆</label>
+                              <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                              <label for="star3" >☆</label>
+                              <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+                              <label for="star2" >☆</label>
+                              <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                              <label for="star1" >☆</label>
+                              <div class="clear"></div>
+                          </div>
+                      </form>
+                  </div> -->
+                  <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
+                      </div>
 
 {% endblock %}
