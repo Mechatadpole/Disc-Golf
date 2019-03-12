@@ -10,6 +10,7 @@
                     <th class="table_head" scope="col">City</th>
                     <th class="table_head" scope="col">Holes</th>
                     <th class="table_head" scope="col">Tee Type</th>
+                    <th class="table_head" scope="col" style="text-align:right;">Play</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,7 +18,7 @@
                     {% for courses in course_list %}
 
                         <tr>
-                            <td>{{ courses.name }}</td>
+                            <td>{{ courses.course_name }}</td>
                             <td>{{ courses.city }}</td>
                             <td>{{ courses.holes }}</td>
                             <td>{{ courses.tee_type }}</td>
@@ -25,6 +26,8 @@
                                 <form action="{% url 'couresHome' %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="id" value='{{ course.id }}'>
+                                    <input type="hidden" name="play" value=True>
+                                    <input class="td_button btn btn-success" type="submit" value="Play Course">
                                    
                                 </form>                            
                             </td>
@@ -42,5 +45,50 @@
             </tbody>
         </table>
     </div>
+    <br>
+    <br>
+    <h2 class="table_heading">To Play List</h2>
+    <div class="list_table">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr class="table_head">
+                    <th class="table_head" scope="col">Course Name</th>
+                    <th class="table_head" scope="col">City</th>
+                    <th class="table_head" scope="col">Holes</th>
+                    <th class="table_head" scope="cole">Tee Type</th>
+                    <th class="table_head" scope="col" style="text-align:right;">Play</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if play_course %}
+                    {% for courses in play_course %}
+                        <tr>
+                            <td>{{ courses.course_name }}</td>
+                            <td>{{ courses.city }}</td>
+                            <td>{{ courses.holes }}</td>
+                            <td>{{ courses.tee_type}}</td>
+                            <td> 
+                                <form action="{% url 'courseHome' %}"></form>
+                                <form action="{% url 'courseHome' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id" value='{{ course.id }}'>
+                                    <input type="hidden" name="play" value=False>
+                                    <input class="td_button btn btn-success" type="submit" value="Remove Course">
+                                </form>                            
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td>No Courses In Your List</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
 
 {% endblock %}
