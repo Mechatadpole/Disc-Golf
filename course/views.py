@@ -10,11 +10,11 @@ def home(request):
         added_course.play = request.POST('play')
         added_course.save()
         return redirect('courseHome')
-    course_list_items = models.Course.objects.filter(play=False)
+    course_list = models.Course.objects.filter(play=False)
     play_course = models.Course.objects.filter(play=True)
 
     context = {
-        'course_list': course_list_items,
+        'course_list': course_list,
         "play_course": play_course
     }
 
@@ -28,9 +28,6 @@ def add(request):
         added_course.save()
         return redirect('courseHome')
 
-
-    
-    
     # If nothing is added into the addCourse prompt, reload the course_add.html page for re-entry of the prompt or to exit the page.
     return render(request, 'course/course_add.html')
 
