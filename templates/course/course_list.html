@@ -3,7 +3,7 @@
 {% block content %}
 
  <div class="list_table">
-        <table class="table">
+        <table class="table" style="background-color: white;">
             <thead class="thead-dark">
                 <tr class="table_header">
                     <th class="table_head" scope="col">Course Name</th>
@@ -13,7 +13,7 @@
                     <th class="table_head" scope="col" style="text-align:right;">Play</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style='background-color: white;'>
                 {% if course_list %}
                     {% for courses in course_list %}
 
@@ -49,7 +49,7 @@
     <br>
     <h2 class="table_heading">To Play List</h2>
     <div class="list_table">
-        <table class="table">
+        <table class="table" style='background-color: white;'>
             <thead class="thead-dark">
                 <tr class="table_head">
                     <th class="table_head" scope="col">Course Name</th>
@@ -59,7 +59,7 @@
                     <th class="table_head" scope="col" style="text-align:right;">Play</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="background-color: white;">
                 {% if play_course %}
                     {% for courses in play_course %}
                         <tr>
