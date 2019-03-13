@@ -23,7 +23,7 @@
                             <td>{{ courses.holes }}</td>
                             <td>{{ courses.tee_type }}</td>
                             <td>
-                                <form action="{% url 'courseHome' %}" method="POST">
+                                <form action="{% url 'couresHome' %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="id" value='{{ courses.id }}'>
                                     <input type="hidden" name="play" value=True>
