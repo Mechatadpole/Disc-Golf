@@ -68,10 +68,14 @@
                             <td>{{ courses.holes }}</td>
                             <td>{{ courses.tee_type}}</td>
                             <td> 
+                                <form action="{% url 'deleteCourse' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value='{{ courses.id }}'>
+                                <input type="submit" value="Delete" class="btn btn-danger">
                                 <form action="{% url 'courseHome' %}"></form>
                                 <form action="{% url 'courseHome' %}" method="POST">
                                     {% csrf_token %}
-                                    <input type="hidden" name="id" value='{{ course.id }}'>
+                                    <input type="hidden" name="id" value='{{ courses.id }}'>
                                     <input type="hidden" name="play" value=False>
                                     <input class="td_button btn btn-success" type="submit" value="Remove Course">
                                 </form>                            
