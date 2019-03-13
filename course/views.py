@@ -7,7 +7,7 @@ def home(request):
     # when the home function is requested, redirects users to the course_list.html page
     if request.method =="POST":
         added_course = models.Course.objects.get(id=request.POST['id'])
-        added_course.play = request.POST('play')
+        added_course.play = request.POST['play']
         added_course.save()
         return redirect('courseHome')
     course_list = models.Course.objects.filter(play=False)
@@ -31,6 +31,11 @@ def add(request):
     # If nothing is added into the addCourse prompt, reload the course_add.html page for re-entry of the prompt or to exit the page.
     return render(request, 'course/course_add.html')
 
+def delete(request):
+    if request.method == "POST":
+        added_course = models.Course.objects.get(id=request.POST['id'])
+        added_course.delete()
+        return redirect('courseHome')
 
 
 
