@@ -37,5 +37,7 @@ def delete(request):
         added_course.delete()
         return redirect('courseHome')
 
+def reviews(request):
+    return render(request, 'course/reviews.html')
 
 
