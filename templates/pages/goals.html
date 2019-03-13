@@ -3,14 +3,14 @@
 {% block content %}
 
 
-<div class="container-fluid" style="background-image: url({% static 'img/northview.jpg' %}); height: 950px;  background-size: cover; background-position: 50%">
+<div class="container-fluid" style="height: 950px;  background-size: cover; background-position: 50%">
     <div class="background">
       <div class="row">
         <div class="float-left">
             <br>
             <br>
             <br>
-            <h2 style="color:aliceblue">Course Review</h2>
+            <h2 style="color: #343a40">Course Review</h2>
             <br>
             <form class ="add_form" action="{% url 'goalsHome' %}" method="POST">
                 {% csrf_token %}
