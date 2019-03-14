@@ -41,6 +41,15 @@ def reviews(request):
     return render(request, 'course/reviews.html')
 
 def reviews_add(request):
-    return render(request, 'course/reviews_add.html')
+    if request.method =="POST":
+        new_review = models.Review.objects.get(id=request.POST['id'])
+        new_review.save()
+        return redirect('reviewCourse')
+    review_list = models.Review.objects
+    context = {
+        'review_list': review_list,
+    }
+        
+    return render(request, 'course/reviews_add.html', context=context)
 
 
