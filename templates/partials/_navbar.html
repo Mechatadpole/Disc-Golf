@@ -15,6 +15,8 @@
         </div>
         <div class="navbar-nav">
             {% if user.is_authenticated %}
+                <a href="{% url 'addCourse' %}" class="nav-item nav-link my_links">Add Course</a>
+                <a class="nav-item nav-link my_links" href="{% url 'reviewAdd' %}">Add Review</a>
                 <a class="nav-item nav-link my_links" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link my_links" href="{% url 'logout' %}">Logout</a>
             {% else %}               
