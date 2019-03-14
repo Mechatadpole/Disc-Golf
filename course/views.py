@@ -40,4 +40,7 @@ def delete(request):
 def reviews(request):
     return render(request, 'course/reviews.html')
 
+def reviews_add(request):
+    return render(request, 'course/reviews_add.html')
+
 
