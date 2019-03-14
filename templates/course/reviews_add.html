@@ -3,12 +3,12 @@
 {% block content %}
 
 
-<div class="container-fluid" style="height: 950px;  background-size: cover; background-position: 50%; padding: 25px">
+<div class="container-fluid"  style="background-image: url({% static 'img/northview.jpg' %}); height: 950px;  background-size: cover; background-position: 50%; padding: 25px">
     <div class="background">
       <div class="row">
         <div class="float-left">
             <br>
-            <h2 style="color: white; padding: 0px 45px;">Course Review</h2>
+            <br>
             <br>
             <form class ="add_form" action="{% url 'reviewCourse' %}" method="POST" style="padding: 0px 45px;">
                 {% csrf_token %}
