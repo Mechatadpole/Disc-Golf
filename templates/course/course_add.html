@@ -10,7 +10,7 @@
           <br>
           <br>
           <br>
-          <form class ="add_form" action="{% url 'addCourse' %}" method="POST" style='padding: 25px;'>
+          <form class ="add_form" action="{% url 'addCourse' %}" method="POST" style='padding: 0px 45px;'>
             {% csrf_token %}
             <div class="form-group">
                <input type="text" class="form-control" name="course_name" id="course_name" placeholder="Course Name">
