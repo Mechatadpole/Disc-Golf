@@ -10,7 +10,7 @@
             <br>
             <h2 style="color: white; padding: 0px 45px;">Course Review</h2>
             <br>
-            <form class ="add_form" action="{% url 'goalsHome' %}" method="POST" style="padding: 0px 45px;">
+            <form class ="add_form" action="{% url 'reviewCourse' %}" method="POST" style="padding: 0px 45px;">
                 {% csrf_token %}
                 <div class="form-group">
                     <input type="text" class="form-control" name="course_name" id="course_name" placeholder="Course Name">
