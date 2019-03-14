@@ -14,5 +14,5 @@ class Course(models.Model):
     def __str__(self):
         return self.course_name
 
-class Review(Course):
+class Review(Course, models.Model):
     thoughts = models.CharField(max_length=1800)    

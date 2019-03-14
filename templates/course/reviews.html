@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class= "container">
+
+    {% if review_list %}
+        {% for review in review_list %}
+            {% csrf_token %}
+            <p style="color:white;">{{ review.course_name }}</p>
+            <p style="color:white;">{{ review.cit }}</p>
+            <p style="color:white;">{{ review.thoughts}}</p>
+        {% endfor %}
+    {% else %}
+        <p style="color:white;">No Reviews Are Available</p>           
+    {% endif %}
+</div>
 
 {% endblock %}

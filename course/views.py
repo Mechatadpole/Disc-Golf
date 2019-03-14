@@ -38,18 +38,18 @@ def delete(request):
         return redirect('courseHome')
 
 def reviews(request):
-    return render(request, 'course/reviews.html')
+    review_list = models.Review.objects.all()
+    context = {
+    'review_list': review_list
+    }
+    return render(request, 'course/reviews.html', context=context)
 
 def reviews_add(request):
     if request.method =="POST":
-        new_review = models.Review.objects.get(id=request.POST['id'])
+        new_review = models.Review(course_name=request.POST['course_name'], city=request.POST['city'], holes=request.POST['holes'], tee_type=request.POST['tee_type'], thoughts=request.POST['thoughts'])
         new_review.save()
         return redirect('reviewCourse')
-    review_list = models.Review.objects
-    context = {
-        'review_list': review_list,
-    }
         
-    return render(request, 'course/reviews_add.html', context=context)
+    return render(request, 'course/reviews_add.html')
 
 
