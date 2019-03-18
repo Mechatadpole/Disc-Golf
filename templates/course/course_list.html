@@ -18,7 +18,9 @@
                     {% for courses in course_list %}
 
                         <tr>
-                            <td>{{ courses.course_name }}</td>
+                            <td>
+                                <a href="{% url 'courseInfo' courses.id %}">{{ courses.course_name }}</a>
+                            </td>
                             <td>{{ courses.city }}</td>
                             <td>{{ courses.holes }}</td>
                             <td>{{ courses.tee_type }}</td>
