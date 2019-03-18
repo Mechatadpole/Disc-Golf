@@ -52,4 +52,10 @@ def reviews_add(request):
         
     return render(request, 'course/reviews_add.html')
 
+def course_detail(request, course_id):
+    ind_course = models.Course.objects.get(id=course_id)
+    context = {
+        'ind_course'= ind_course
+    }
+    return render(request, '', context=context)
 
