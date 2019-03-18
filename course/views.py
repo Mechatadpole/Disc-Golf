@@ -57,5 +57,5 @@ def course_detail(request, course_id):
     context = {
         'ind_course': ind_course
     }
-    return render(request, 'course/course_detail', context=context)
+    return render(request, 'course/course_detail.html', context=context)
 
