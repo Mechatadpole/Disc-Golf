@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth.models import User
 
 
 # Different inputs and values for the addCourse prompt
@@ -14,5 +15,7 @@ class Course(models.Model):
     def __str__(self):
         return self.course_name
 
-class Review(Course, models.Model):
-    thoughts = models.CharField(max_length=1800)    
+class Review(models.Model):
+    thoughts = models.CharField(max_length=1800)
+    user = models.ForeignKey(User, on_delete="CASCADE")
+    review = models.ForeignKey(Course, on_delete="CASCADE")
