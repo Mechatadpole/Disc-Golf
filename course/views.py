@@ -46,4 +46,4 @@ def course_detail(request, course_id):
     return render(request, 'course/course_detail.html', context=context)
 
 def review(request):
-    return render(request, 'course/course_detail.html')
+    return render(request, 'course/reviews.html')
