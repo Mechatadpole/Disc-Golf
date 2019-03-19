@@ -3,8 +3,10 @@
 {% block content %}
 {% if ind_course %}
     
-        <head>Beans</head>
-        <h1>{{ ind_course.course_name }}</h1>
+    <h1 style = "color: white; text-align: center;">{{ ind_course.course_name }}</h1>
+    <h5 style = "color: white; text-align: center;"> City: {{ ind_course.city }} </h5>
+    <h5 style = "color: white; text-align: center;"> {{ ind_course.holes }} holes</h5>
+    <h5 style ="color: white; text-align: center; "> Tee Type: {{ ind_course.tee_type }}</h5>
 
 
 {% endif %}
