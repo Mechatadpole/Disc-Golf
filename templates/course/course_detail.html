@@ -8,6 +8,44 @@
     <h5 style = "color: white; text-align: center;"> {{ ind_course.holes }} holes</h5>
     <h5 style ="color: white; text-align: center; "> Tee Type: {{ ind_course.tee_type }}</h5>
 
+    <section style = " background-color: #918b78">
+        <p style = "color: white; padding:  0px 45px;">User Name</p>
+        <p style = "color: white; padding: 0px 45px;">Review</p>
+    </section>
+    <section style = " background-color: #918b78">
+        <p style = "color: white; padding:  0px 45px;">User Name</p>
+        <p style = "color: white; padding: 0px 45px;">Review</p>
+    </section>
+    <section style = " background-color: #918b78">
+        <p style = "color: white; padding:  0px 45px;">User Name</p>
+        <p style = "color: white; padding: 0px 45px;">Review</p>
+    </section>
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Review</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Course Review</h4>
+        </div>
+        <div class="modal-body">
+            <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+
 
 {% endif %}
 
