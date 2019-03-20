@@ -3,6 +3,7 @@ from django.http import HttpResponse
 
 from . import models
 
+
 def home(request):
     # when the home function is requested, redirects users to the course_list.html page
     if request.method =="POST":
@@ -63,7 +64,7 @@ def review(request):
 
 def add_review(request):
     if request.method == "POST":
-        added_review = models.Review(user=request.POST['user'], thoughts=request.POST['thoughts'], review=request.POST['review'])
+        added_review = models.Review(author=request.POST['profile'], thoughts=request.POST['thoughts'], crse=request.POST['course'])
         added_review.save()
         return redirect('reviewCourse')
 

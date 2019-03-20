@@ -20,7 +20,7 @@
                 <a href="{% url 'addCourse' %}" class="nav-item nav-link my_links" style= "color: white;">Add Course</a>
                 <a class="nav-item nav-link my_links" href="{% url 'profile' %}"  style= "color: white;">Profile</a>
                 <a class="nav-item nav-link my_links" href="{% url 'logout' %}"  style= "color: white;">Logout</a>
-            {% else %}               
+            {% else %} 
                 <a class="nav-item nav-link my_links" href="{% url 'login' %}"  style= "color: white;">Login</a>
                 <a class="nav-item nav-link my_links" href="{% url 'register' %}"  style= "color: white;">Register</a>
             {% endif %}
