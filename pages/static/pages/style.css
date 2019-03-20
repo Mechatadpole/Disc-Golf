@@ -1,8 +1,7 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 fieldset, label { margin: 0; padding: 0; }
-body{ margin: 20px; }
-h1 { font-size: 1.5em; margin: 10px; }
+body{ margin: 20px;}
 
 /****** Style Star Rating Widget *****/
 
@@ -47,12 +46,8 @@ li {
   color: white;
 }
 
-.text-muted{
-  color: white;
-}
-
 small {
-  color: white;
+  color:white;
 }
 
 p {
@@ -72,4 +67,16 @@ label {
 
 div {
   color: white;
+}
+
+.side_article{
+  height: 100%;
+}
+
+.form-text{
+  color:white !important;
+}
+
+.text-secondary{
+  color:white !important;
 }
