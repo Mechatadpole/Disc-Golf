@@ -45,21 +45,22 @@ def course_detail(request, course_id):
     }
     return render(request, 'course/course_detail.html', context=context)
 
-def review(request):
-    # if request.method =="POST":
-    #     added_review = models.Review.objects.get(id=request.POST['id'])     #TODO: MAKE SURE TO CHANGE 'id'
-    #     added_review.user = request.POST['user']
-    #     added_review.review = request.POST['review']
-    #     added_review.thoughts = request.POST['thoughts']
-    #     added_review.save()
+def review(request, review_id):
+    if request.method =="POST":
+        added_review = models.Review.objects.get(id=request.POST['id'])     #TODO: MAKE SURE TO CHANGE 'id'
+        added_review.user = request.POST['user']
+        added_review.crse = request.POST['course']
+        added_review.thoughts = request.POST['thoughts']
+        added_review.save()
 
-    #     return redirect('reviewCourse')
-    #     review_list = models.Course.objects                                 #TODO: added filter if time
-        context = {
+        return redirect('reviewCourse')
+    review_list = models.Review.objects.get(id=review_id)
+
+    context = {
         "review_list": review_list
     }
 
-    return render(request, 'course/reviews.html')
+    return render(request, 'course/reviews.html', context=context)
 
 def add_review(request):
     if request.method == "POST":
