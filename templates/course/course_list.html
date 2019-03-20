@@ -21,6 +21,7 @@
                             <td>
                                 <a href="{% url 'courseInfo' courses.id %}" style = "color: #212529;">{{ courses.course_name }}</a>
                             </td>
+                            
                             <td>{{ courses.city }}</td>
                             <td>{{ courses.holes }}</td>
                             <td>{{ courses.tee_type }}</td>
@@ -30,6 +31,7 @@
                                     <input type="hidden" name="id" value='{{ courses.id }}'>
                                     <input type="hidden" name="play" value=True>
                                     <input class="td_button btn btn-success" type="submit" value="Play Course">
+                                    <a href="{% url 'courseInfo' courses.id %}" class="td_button btn btn-info active" role="button" aria-pressed="true">Details</a>
                                    
                                 </form>                            
                             </td>
@@ -49,7 +51,7 @@
     </div>
     <br>
     <br>
-    <h2 class="table_heading">To Play List</h2>
+    <h2 class="table_heading" style="color:white">To Play List</h2>
     <div class="list_table">
         <table class="table" style='background-color: white;'>
             <thead class="thead-dark">
