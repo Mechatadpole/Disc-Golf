@@ -55,19 +55,15 @@ def review(request):
 
     #     return redirect('reviewCourse')
     #     review_list = models.Course.objects                                 #TODO: added filter if time
-    #     context = {
-    #     "review_list": review_list
-    # }
+        context = {
+        "review_list": review_list
+    }
 
     return render(request, 'course/reviews.html')
 
 def add_review(request):
     if request.method == "POST":
-<<<<<<< HEAD
-        added_review = models.Review(user=request.POST['user'], thoughts=request.POST['thoughts'], crse=request.POST['course'])
-=======
         added_review = models.Review(author=request.POST['user'], thoughts=request.POST['thoughts'], crse=request.POST['course'])
->>>>>>> 0f2870b97bfd079924acbdb08cc585140763c3b8
         added_review.save()
         return redirect('reviewCourse')
 
