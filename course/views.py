@@ -46,8 +46,8 @@ def course_detail(request, course_id):
     return render(request, 'course/course_detail.html', context=context)
 
 def review(request, review_id):
-    if request.method =="POST":
-        added_review = models.Review.objects.get(id=request.POST['id'])     #TODO: MAKE SURE TO CHANGE 'id'
+    if request.method =="POST":f
+        added_review = models.Review.objects.get(id=request.POST['id'])
         added_review.user = request.POST['user']
         added_review.crse = request.POST['course']
         added_review.thoughts = request.POST['thoughts']
