@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if review_list %}
+    {% for review in review_list %}
 
+    <div class="card">
+        <h2>{{ review.crse }}</h2>
+        <h4>{{ review.author }}</h4>
+        <p>{{ review.thoughts }}</p>
+    </div>
+        
 
+    {% endfor %}
 {% endif %}
 
 
