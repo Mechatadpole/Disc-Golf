@@ -63,7 +63,11 @@ def review(request):
 
 def add_review(request):
     if request.method == "POST":
+<<<<<<< HEAD
         added_review = models.Review(user=request.POST['user'], thoughts=request.POST['thoughts'], crse=request.POST['course'])
+=======
+        added_review = models.Review(author=request.POST['user'], thoughts=request.POST['thoughts'], crse=request.POST['course'])
+>>>>>>> 0f2870b97bfd079924acbdb08cc585140763c3b8
         added_review.save()
         return redirect('reviewCourse')
 

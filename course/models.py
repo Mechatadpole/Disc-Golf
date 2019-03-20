@@ -1,7 +1,8 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import User
-
+from users.models import Profile
+# from django.db.models.ForeignKey import author, crse                   #TODO: Needs to be in the area where 'author' and 'crse' are.
 
 # Different inputs and values for the addCourse prompt
 
@@ -17,5 +18,5 @@ class Course(models.Model):
 
 class Review(models.Model):
     thoughts = models.CharField(max_length=1800)
-    author = models.ForeignKey(User, on_delete="CASCADE")
-    crse = models.ForeignKey(Course, on_delete="CASCADE")
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    crse = models.ForeignKey(Course, on_delete=models.CASCADE)
