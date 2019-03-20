@@ -18,5 +18,5 @@ class Course(models.Model):
 
 class Review(models.Model):
     thoughts = models.CharField(max_length=1800)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    crse = models.ForeignKey(Course, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete="CASCADE")
+    crse = models.ForeignKey(Course, on_delete="CASCADE")
