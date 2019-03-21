@@ -31,10 +31,11 @@ def add(request):
     # If nothing is added into the addCourse prompt, reload the course_add.html page for re-entry of the prompt or to exit the page.
     return render(request, 'course/course_add.html')
 
-def delete(request):
+
+def my_delete(request):
     if request.method == "POST":
-        added_course = models.Course.objects.get(id=request.POST['id'])
-        added_course.delete()
+        del_course = models.Course.objects.get(id=request.POST['id'])
+        del_course.delete()
         return redirect('courseHome')
 
 
@@ -48,7 +49,7 @@ def course_detail(request, course_id):
     return render(request, 'course/course_detail.html', context=context)
 
 def review(request):
-    if request.method =="POST":
+    if request.method == "POST":
         added_review = models.Review.objects.get(id=request.POST['id'])
         added_review.user = request.POST['user']
         added_review.crse = request.POST['course']
