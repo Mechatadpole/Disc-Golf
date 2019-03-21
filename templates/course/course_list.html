@@ -26,6 +26,7 @@
                             <td>{{ courses.holes }}</td>
                             <td>{{ courses.tee_type }}</td>
                             <td>
+                                {% if request.user.is_staff %}
                                 <form action="{% url 'courseHome' %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="id" value='{{ courses.id }}'>
@@ -33,7 +34,8 @@
                                     <input class="td_button btn btn-success" type="submit" value="Play Course">
                                     <a href="{% url 'courseInfo' courses.id %}" class="td_button btn btn-info active" role="button" aria-pressed="true">Details</a>
                                    
-                                </form>                            
+                                </form>  
+                                {% endif %}                          
                             </td>
                         </tr>
 
@@ -72,6 +74,7 @@
                             <td>{{ courses.holes }}</td>
                             <td>{{ courses.tee_type}}</td>
                             <td> 
+                                {% if request.user.is_staff %}
                                 <form action="{% url 'deleteCourse' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value='{{ courses.id }}'>
@@ -82,7 +85,8 @@
                                     <input type="hidden" name="id" value='{{ courses.id }}'>
                                     <input type="hidden" name="play" value=False>
                                     <input class="td_button btn btn-success" type="submit" value="Remove Course">
-                                </form>                            
+                                </form>
+                                {% endif %}                            
                             </td>
                         </tr> 
                     {% endfor %}
