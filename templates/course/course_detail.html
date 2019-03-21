@@ -44,7 +44,7 @@
                  </div>
                 {% endif %}
                 <div class="form-group">
-                    <input type="hidden" class="form-control" name="crse" id="crse" placeholder="Course Name" value="{{course.id}}">
+                    <input type="hidden" class="form-control" name="crse" id="crse" placeholder="Course Name" value="window.location.href">
                  </div>
                  <div class="form-group" style="width: 100%">
                     <textarea type="text" class="form-control" id="thoughts" name="thoughts"  placeholder="What are your thoughts?" style="height: 150px; "></textarea>
@@ -64,6 +64,6 @@
 
 {% endif %}
 
-
+{% comment %} make a drop down menu with the course list so the user selects it {% endcomment %}
 
 {% endblock %}
