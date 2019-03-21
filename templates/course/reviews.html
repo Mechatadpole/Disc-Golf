@@ -1,30 +1,31 @@
 {% extends 'base.html' %}
-
+{% load static%}
 {% block content %}
-{% if review_list %}
-    {% for review in review_list %}
-    <br>
-    <div class="card" style="background-color: #918B78; width: 50%; border-radius: 25px;" >
-        <div class="container">
-            <h2>{{ review.crse }}</h2>
-            <h4>{{ review.author }}</h4>
-            <p>{{ review.thoughts }}</p>
-            {% if request.user.is_staff %}
-            <form action="{% url 'deleteReview' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="id" value='{{ review.id }}'>
-                <input type="submit" value="Delete" class="btn btn-danger">
-                <form action="{% url 'reviewCourse' %}"></form>
-                <form action="{% url 'reviewCourse' %}" method="POST"></form>
-            </form>
-            {% endif %}
-        </div>
+    <div class='container-fluid' style="background-image: url({% static 'img/holeTrees.jpg' %}); background-size: cover; background-position: 50%; border-radius: 25px; height: 950px;">
+        {% if review_list %}
+            {% for review in review_list %}
+            <br>
+            <div class="card" style="background-color: #918B78; width: 50%; border-radius: 25px;" >
+                <div class="container">
+                    <h2>{{ review.crse }}</h2>
+                    <h4>{{ review.author }}</h4>
+                    <p>{{ review.thoughts }}</p>
+                    {% if request.user.is_staff %}
+                    <form action="{% url 'deleteReview' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value='{{ review.id }}'>
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                        <form action="{% url 'reviewCourse' %}"></form>
+                        <form action="{% url 'reviewCourse' %}" method="POST"></form>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+            
+                
+            {% endfor %}
+        {% endif %}
     </div>
-        
-        
-    {% endfor %}
-{% endif %}
-
 
 
 {% endblock %}
