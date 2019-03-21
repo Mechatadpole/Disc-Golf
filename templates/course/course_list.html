@@ -28,16 +28,18 @@
                             <td>{{ courses.holes }}</td>
                             <td>{{ courses.tee_type }}</td>
                             <td>
-                                {% if request.user.is_staff %}
+                                
                                 <form action="{% url 'courseHome' %}" method="POST">
                                     {% csrf_token %}
-                                    <input type="hidden" name="id" value='{{ courses.id }}'>
-                                    <input type="hidden" name="play" value=True>
-                                    <input class="td_button btn btn-success" type="submit" value="Play Course">
+                                    {% if request.user.is_staff %}
+                                        <input type="hidden" name="id" value='{{ courses.id }}'>
+                                        <input type="hidden" name="play" value=True>
+                                        <input class="td_button btn btn-success" type="submit" value="Play Course">
+                                    {% endif %}
                                     <a href="{% url 'courseInfo' courses.id %}" class="td_button btn btn-info active" role="button" aria-pressed="true">Details</a>
                                    
                                 </form>  
-                                {% endif %}                          
+                                                          
                             </td>
                         </tr>
 
