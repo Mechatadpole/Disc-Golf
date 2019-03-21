@@ -69,6 +69,6 @@ def add_review(request):
         r_course = models.Course.objects.get(id=request.POST["crse"])
         added_review = models.Review(author=request.user, thoughts=request.POST['thoughts'], crse=r_course)
         added_review.save()
-        return redirect('reviewCourse')
+        return redirect('courseInfo', r_course.id)
 
-    return render(request, 'course/reviews.html')
+    return render(request, 'course/course_detail.html')
