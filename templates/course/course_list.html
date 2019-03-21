@@ -83,18 +83,11 @@
                             <td> 
                                 {% if request.user.is_staff %}
                                 <form action="{% url 'deleteCourse' %}" method="POST">
-<<<<<<< HEAD
-                                    {% csrf_token %}
-                                    <input type="hidden" name="id" value='{{ courses.id }}'>
-                                    <input type="submit" value="Delete" class="btn btn-danger">
-                                </form>
-=======
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value='{{ courses.id }}'>
                                 <input type="submit" value="Delete" class="btn btn-danger">
                                 </form>
                                 {% endif %}                            
->>>>>>> 3845b086da58f6f6b02ed1c6b61cda464c5c28ad
                                 <form action="{% url 'courseHome' %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="id" value='{{ courses.id }}'>
