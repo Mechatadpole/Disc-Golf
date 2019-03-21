@@ -11,7 +11,7 @@
     {% if review_list %}
         {% for reviews in review_list%}
 
-            <section style = " background-color: #918b78">
+            <section style = " background-color: #918b78; border-radius: 25px">
                 <p style = "color: white; padding:  0px 45px;">{{ reviews.author }}</p>
                 {% if not reviews.thoughts %}
                     <p style ="color: white; padding: 0px 45px;">No Review</p>
