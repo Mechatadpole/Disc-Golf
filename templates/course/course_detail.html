@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class= 'container-fluid' style="background-image: url({% static 'img/holeTrees.jpg' %}); background-size: cover; background-position: 50%; border-radius: 25px; height: 500px">
+<div class= 'container-fluid' style="background-image: url({% static 'img/holeTrees.jpg' %}); background-size: cover; background-position: 50%; border-radius: 25px; height: 100%">
     <div class="background">
         {% if ind_course %}
             <div class="container" style="background-color: #918b78; border-radius: 25px; width: 50%">
@@ -49,7 +49,7 @@
                             <div class="form-group" style="width: 100%">
                                 <textarea type="text" class="form-control" id="thoughts" name="thoughts"  placeholder="What are your thoughts?" style="height: 150px; "></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" style=" background-color: #343a40!important; border: none;">Submit Review</button>
+                            <button type="submit" class="btn btn-primary" style=" background-color: #343a40!important; border: none; float: right;">Submit Review</button>
                             {% comment %} PUt else here {% endcomment %}
                             {% endif %}
                         </form>
