@@ -72,3 +72,10 @@ def add_review(request):
         return redirect('courseInfo', r_course.id)
 
     return render(request, 'course/course_detail.html')
+
+
+def review_delete(request):
+    if request.method == "POST":
+        added_review = models.Review.objects.get(id=request.POST['id'])
+        added_review.delete()
+        return redirect('reviewCourse')
