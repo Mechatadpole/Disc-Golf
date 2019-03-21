@@ -86,14 +86,14 @@
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value='{{ courses.id }}'>
                                 <input type="submit" value="Delete" class="btn btn-danger">
-                                <form action="{% url 'courseHome' %}"></form>
+                                </form>
+                                {% endif %}                            
                                 <form action="{% url 'courseHome' %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="id" value='{{ courses.id }}'>
                                     <input type="hidden" name="play" value=False>
                                     <input class="td_button btn btn-success" type="submit" value="Remove Course">
                                 </form>
-                                {% endif %}                            
                             </td>
                         </tr> 
                     {% endfor %}
