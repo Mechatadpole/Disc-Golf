@@ -40,8 +40,10 @@ def delete(request):
 
 def course_detail(request, course_id):
     ind_course = models.Course.objects.get(id=course_id)
+    review_list = models.Review.objects.filter(crse=ind_course)
     context = {
-        'ind_course': ind_course
+        'ind_course': ind_course,
+        "review_list": review_list
     }
     return render(request, 'course/course_detail.html', context=context)
 
@@ -64,10 +66,8 @@ def review(request, review_id):
 
 def add_review(request):
     if request.method == "POST":
-        r_user = models.User.objects.get(id=request.POST['user'])
-        print(request.POST["crse"])
         r_course = models.Course.objects.get(id=request.POST["crse"])
-        added_review = models.Review(author=r_user, thoughts=request.POST['thoughts'], crse=r_course)
+        added_review = models.Review(author=request.user, thoughts=request.POST['thoughts'], crse=r_course)
         added_review.save()
         return redirect('reviewCourse')
 
