@@ -10,7 +10,9 @@
                     <th class="table_head" scope="col">City</th>
                     <th class="table_head" scope="col">Holes</th>
                     <th class="table_head" scope="col">Tee Type</th>
-                    <th class="table_head" scope="col" style="text-align:right;">Play</th>
+                    {% if request.user.is_staff %}
+                        <th class="table_head" scope="col" style="text-align:right;">Play</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody style='background-color: white;'>
@@ -53,6 +55,7 @@
     </div>
     <br>
     <br>
+    {% if request.user.is_staff %}
     <h2 class="table_heading" style="color:white">To Play List</h2>
     <div class="list_table">
         <table class="table" style='background-color: white;'>
@@ -101,6 +104,7 @@
             </tbody>
         </table>
     </div>
+    {% endif %}
 </div>
 
 {% endblock %}
