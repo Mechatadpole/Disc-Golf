@@ -35,13 +35,8 @@ def add(request):
 # THIS WAS SUPER ANNOYING
 def my_delete(request):
     if request.method == "POST":
-<<<<<<< HEAD
-        added_course = models.Course.objects.get(id=request.POST['id'])
-        added_course.delete()
-=======
         del_course = models.Course.objects.get(id=request.POST['id'])
         del_course.delete()
->>>>>>> f83073bc77038b044a83d4286462a73b00f0ef85
         return redirect('courseHome')
 
 
