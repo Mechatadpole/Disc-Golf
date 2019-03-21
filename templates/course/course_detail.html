@@ -1,65 +1,68 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-{% if ind_course %}
-    
-    <h1 style = "color: white; text-align: center;">{{ ind_course.course_name }}</h1>
-    <h5 style = "color: white; text-align: center;"> City: {{ ind_course.city }} </h5>
-    <h5 style = "color: white; text-align: center;"> {{ ind_course.holes }} holes</h5>
-    <h5 style ="color: white; text-align: center; "> Tee Type: {{ ind_course.tee_type }}</h5>
-
-    {% if review_list %}
-        {% for reviews in review_list%}
-
-            <section style = " background-color: #918b78; border-radius: 25px">
-                <p style = "color: white; padding:  0px 45px;">{{ reviews.author }}</p>
-                {% if not reviews.thoughts %}
-                    <p style ="color: white; padding: 0px 45px;">No Review</p>
-                {% else %}
-                    <p style = "color: white; padding: 0px 45px;">{{ reviews.thoughts}} </p>
-                {% endif %}
-            </section>
-        {% endfor %}
-    {% endif %}
-
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="background-color: #343a40!important; border: none; float: right; padding 0px 45px;">Add Review</button>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Course Review</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+<div class= 'container-fluid' style="background-image: url({% static 'img/holeTrees.jpg' %}); background-size: cover; background-position: 50%; border-radius: 25px; height: 500px">
+    <div class="background">
+        {% if ind_course %}
+            <div class="container" style="background-color: #918b78; border-radius: 25px; width: 50%">
+                <h1 style = "color: white; text-align: center;">{{ ind_course.course_name }}</h1>
+                <h5 style = "color: white; text-align: center;"> City: {{ ind_course.city }} </h5>
+                <h5 style = "color: white; text-align: center;"> {{ ind_course.holes }} holes</h5>
+                <h5 style ="color: white; text-align: center; "> Tee Type: {{ ind_course.tee_type }}</h5>
+            </div>
             
-        </div>
-        <div class="modal-body">
-            <form class ="add_form" action="{% url 'addReview' %}" method="POST" style="padding: 0px 45px;">
-                {% csrf_token %}
-                {% if user.is_authenticated %}
-
-                <div class="form-group">
-                    <input type="hidden" class="form-control" name="crse" id="crse" placeholder="Course Name" value="{{ ind_course.id }}">
-                 </div>
-                 <div class="form-group" style="width: 100%">
-                    <textarea type="text" class="form-control" id="thoughts" name="thoughts"  placeholder="What are your thoughts?" style="height: 150px; "></textarea>
-                </div>
-                 <button type="submit" class="btn btn-primary" style=" background-color: #343a40!important; border: none;">Submit Review</button>
-                {% comment %} PUt else here {% endcomment %}
+                {% if review_list %}
+                    {% for reviews in review_list%}
+                        <div class = "card" style=" background-color: #918b78; border-radius: 25px; width: 50%; margin: 10px;">
+                            <p style = "color: white; padding:  0px 45px;">{{ reviews.author }}</p>
+                                {% if not reviews.thoughts %}
+                                    <p style ="color: white; padding: 0px 45px;">No Review</p>
+                                {% else %}
+                                    <p style = "color: white; padding: 0px 45px;">{{ reviews.thoughts}} </p>
+                                {% endif %}
+                        </div>
+                    {% endfor %}
                 {% endif %}
-               </form>
-        </div>
 
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="background-color: #343a40!important; border: none; float: right; padding 0px 45px;">Add Review</button>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Course Review</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        
+                    </div>
+                    <div class="modal-body">
+                        <form class ="add_form" action="{% url 'addReview' %}" method="POST" style="padding: 0px 45px;">
+                            {% csrf_token %}
+                            {% if user.is_authenticated %}
+
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="crse" id="crse" placeholder="Course Name" value="{{ ind_course.id }}">
+                            </div>
+                            <div class="form-group" style="width: 100%">
+                                <textarea type="text" class="form-control" id="thoughts" name="thoughts"  placeholder="What are your thoughts?" style="height: 150px; "></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style=" background-color: #343a40!important; border: none;">Submit Review</button>
+                            {% comment %} PUt else here {% endcomment %}
+                            {% endif %}
+                        </form>
+                    </div>
+
+                </div>
+                </div>
+            
+
+
+        {% endif %}
     </div>
-    </div>
-
-
-
-{% endif %}
-
+</div>
 {% comment %} make a drop down menu with the course list so the user selects it {% endcomment %}
 
 {% endblock %}
