@@ -8,6 +8,7 @@
     <h5 style = "color: white; text-align: center;"> {{ ind_course.holes }} holes</h5>
     <h5 style ="color: white; text-align: center; "> Tee Type: {{ ind_course.tee_type }}</h5>
 
+    
     <section style = " background-color: #918b78">
         <p style = "color: white; padding:  0px 45px;">User Name</p>
         <p style = "color: white; padding: 0px 45px;">Review</p>
@@ -39,17 +40,16 @@
             <form class ="add_form" action="{% url 'addReview' %}" method="POST" style="padding: 0px 45px;">
                 {% csrf_token %}
                 {% if user.is_authenticated %}
+
                 <div class="form-group">
-                    <input type="hidden" class="form-control" name="user" id="user" placeholder="Username" value="{{ user.id }}">
-                 </div>
-                {% endif %}
-                <div class="form-group">
-                    <input type="hidden" class="form-control" name="crse" id="crse" placeholder="Course Name" value="window.location.href">
+                    <input type="hidden" class="form-control" name="crse" id="crse" placeholder="Course Name" value="{{ ind_course.id }}">
                  </div>
                  <div class="form-group" style="width: 100%">
                     <textarea type="text" class="form-control" id="thoughts" name="thoughts"  placeholder="What are your thoughts?" style="height: 150px; "></textarea>
                 </div>
                  <button type="submit" class="btn btn-primary" style=" background-color: #343a40!important; border: none;">Submit Review</button>
+                {% comment %} PUt else here {% endcomment %}
+                {% endif %}
                </form>
         </div>
         <div class="modal-footer">
