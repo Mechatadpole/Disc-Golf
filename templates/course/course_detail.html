@@ -8,19 +8,15 @@
     <h5 style = "color: white; text-align: center;"> {{ ind_course.holes }} holes</h5>
     <h5 style ="color: white; text-align: center; "> Tee Type: {{ ind_course.tee_type }}</h5>
 
-    
-    <section style = " background-color: #918b78">
-        <p style = "color: white; padding:  0px 45px;">User Name</p>
-        <p style = "color: white; padding: 0px 45px;">Review</p>
-    </section>
-    <section style = " background-color: #918b78">
-        <p style = "color: white; padding:  0px 45px;">User Name</p>
-        <p style = "color: white; padding: 0px 45px;">Review</p>
-    </section>
-    <section style = " background-color: #918b78">
-        <p style = "color: white; padding:  0px 45px;">User Name</p>
-        <p style = "color: white; padding: 0px 45px;">Review</p>
-    </section>
+    {% if review_list %}
+        {% for reviews in review_list%}
+
+            <section style = " background-color: #918b78">
+                <p style = "color: white; padding:  0px 45px;">{{ reviews.author }}</p>
+                <p style = "color: white; padding: 0px 45px;">{{ reviews.thoughts}} </p>
+            </section>
+        {% endfor %}
+    {% endif %}
 
     <!-- Trigger the modal with a button -->
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="background-color: #343a40!important; border: none; float: right; padding 0px 45px;">Add Review</button>
