@@ -3,11 +3,13 @@
 {% block content %}
 {% if review_list %}
     {% for review in review_list %}
-
-    <div class="card">
-        <h2>{{ review.crse }}</h2>
-        <h4>{{ review.author }}</h4>
-        <p>{{ review.thoughts }}</p>
+    <br>
+    <div class="card" style="background-color: #918B78; width: 50%" >
+        <div class="container">
+            <h2>{{ review.crse }}</h2>
+            <h4>{{ review.author }}</h4>
+            <p>{{ review.thoughts }}</p>
+        </div>
     </div>
         
 
