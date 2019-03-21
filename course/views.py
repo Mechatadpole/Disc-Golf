@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-# from django.core.paginator import Paginator, EmptyPage, PageNotAndInteger
+from django.core.paginator import Paginator
 
 from . import models
 
@@ -35,9 +35,7 @@ def add(request):
 def delete(request):
     if request.method == "POST":
         added_course = models.Course.objects.get(id=request.POST['id'])
-        print(added_course)
         added_course.delete()
-        print(added_course)
         return redirect('courseHome')
 
 
@@ -83,15 +81,9 @@ def review_delete(request):
         added_review.delete()
         return redirect('reviewCourse')
 
-# def index(request):
-#     review_list = models.Review.objects.all()
-#     page = request.GET.get('page', 1)
+def index_review(request):
+    review_list = models.Review.objects.all()
+    page = request.GET.get('page', 1)
 
-#     paginator = Paginator(review_list, 10)
-#     try:
-#         users = paginator.page(page)
-#     except PageNotAnInteger:
-#         users = paginator.page(1)
-#     except EmptyPage:
-#         users = paginator.page(paginator.num_pages)
-#     return render(request, 'reviews.html', { 'review': review })
+    paginator = Paginator(review_list, 5)
+    return render(request, 'reviews.html', { 'review': review })
