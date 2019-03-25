@@ -59,9 +59,13 @@ def review(request):
 
         return redirect('reviewCourse')
     review_list = models.Review.objects.all()
+    paginator = Paginator(review_list, 5)
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
 
     context = {
-        "review_list": review_list
+        "review_list": review_list,
+        "contacts": contacts,
     }
 
     return render(request, 'course/reviews.html', context=context)
@@ -82,19 +86,14 @@ def review_delete(request):
         added_review.delete()
         return redirect('reviewCourse')
 
-def index(request):
-    if request.method == "POST":
-        all_reviews = models.Review.objects.get(id=request.POST['id'])
-        all_reviews.save()
+# def index(request):
 
-    reviews_list = models.Review.objects.filter(publish=True)
-    paginator= Paginator(reviews_list, 5)
-    page = request.GET.get('page')
-    contacts=paginator.get_page(page)
+#     reviews = models.Review.objects.all()
+#     paginator = Paginator(reviews, 5)
 
-    context = {
-        'review_list': contacts,
-        'contacts': contacts,
-    }
+#     page = request.GET.get('page')
 
-    return render(request, 'course/reviews.html', context=context)
+#     contacts = paginator.get_page(page)
+    
+
+#     return render(request, 'course/reviews.html', {'reviews': reviews})
