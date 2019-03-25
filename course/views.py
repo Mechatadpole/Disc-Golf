@@ -85,15 +85,3 @@ def review_delete(request):
         added_review = models.Review.objects.get(id=request.POST['id'])
         added_review.delete()
         return redirect('reviewCourse')
-
-# def index(request):
-
-#     reviews = models.Review.objects.all()
-#     paginator = Paginator(reviews, 5)
-
-#     page = request.GET.get('page')
-
-#     contacts = paginator.get_page(page)
-    
-
-#     return render(request, 'course/reviews.html', {'reviews': reviews})
