@@ -64,8 +64,7 @@ def review(request):
     contacts = paginator.get_page(page)
 
     context = {
-        "review_list": review_list,
-        "contacts": contacts,
+        "review_list": contacts,
     }
 
     return render(request, 'course/reviews.html', context=context)

@@ -29,22 +29,22 @@
     <div class="pagination row" id=allpag>
         <div class='col-4'></div>
         <span class="step-links col-4">
-            {% if contacts.has_previous %}
+            {% if review_list.has_previous %}
                 <a href="?page=1"> &laquo; first </a>
                     | 
-                <a href="?page={{ contacts.previous_page_number }}"> previous </a>
+                <a href="?page={{ review_list.previous_page_number }}"> previous </a>
                     | 
             {% endif %}
     
             <span class="current">
-                    Page {{ contacts.number }} of {{ contacts.paginator.num_pages }} 
+                    Page {{ review_list.number }} of {{ review_list.paginator.num_pages }} 
             </span>
     
-            {% if contacts.has_next %}
+            {% if review_list.has_next %}
                     | 
-                <a href="?page={{ contacts.next_page_number }}"> next </a>
+                <a href="?page={{ review_list.next_page_number }}"> next </a>
                     | 
-                <a href="?page={{ contacts.paginator.num_pages }}"> last &raquo; </a>
+                <a href="?page={{ review_list.paginator.num_pages }}"> last &raquo; </a>
             {% endif %}
         </span>
         <div class='col-4'></div>
