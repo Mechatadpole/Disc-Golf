@@ -43,9 +43,12 @@ def my_delete(request):
 def course_detail(request, course_id):
     ind_course = models.Course.objects.get(id=course_id)
     review_list = models.Review.objects.filter(crse=ind_course)
+    paginator = Paginator(review_list, 5)
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
     context = {
         'ind_course': ind_course,
-        "review_list": review_list
+        "review_list": contacts,
     }
     return render(request, 'course/course_detail.html', context=context)
 

@@ -57,12 +57,39 @@
 
                 </div>
                 </div>
-            
-
-
+                
         {% endif %}
+        <br>
+        <br>
+         
+        
     </div>
 </div>
+<div class="pagination row" id=allpag>
+            <div class='col-4'></div>
+                <span class="step-links col-4">
+                    {% if review_list.has_previous %}
+                        <a href="?page=1"> &laquo; first </a>
+                            | 
+                        <a href="?page={{ review_list.previous_page_number }}"> previous </a>
+                            | 
+                    {% endif %}
+                
+                    <span class="current">
+                        Page {{ review_list.number }} of {{ review_list.paginator.num_pages }} 
+                    </span>
+                
+                    {% if review_list.has_next %}
+                            | 
+                        <a href="?page={{ review_list.next_page_number }}"> next </a>
+                            | 
+                        <a href="?page={{ review_list.paginator.num_pages }}"> last &raquo; </a>
+                    {% endif %}
+                </span>
+                <div class='col-4'></div>
+            </div>
+</div>
+
 {% comment %} make a drop down menu with the course list so the user selects it {% endcomment %}
 
 {% endblock %}
