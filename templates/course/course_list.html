@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+
+ <div class="list_table" style="border-radius: 25px;">
+        <table class="table" style="background-color: white;">
+            <thead class="thead-dark">
+                <tr class="table_header" style="border-radius: 25px;">
+                    <th class="table_head" scope="col">Course Name</th>
+                    <th class="table_head" scope="col">City</th>
+                    <th class="table_head" scope="col">Holes</th>
+                    <th class="table_head" scope="col">Tee Type</th>
+                    <th class="table_head" scope="col"></th>
+                    {% if request.user.is_staff %}
+                        <th class="table_head" scope="col" style="text-align:right;">Play</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody style='background-color: white;'>
+                {% if course_list %}
+                    {% for courses in course_list %}
+
+                        <tr>
+                            <td>
+                                <a href="{% url 'courseInfo' courses.id %}" style = "color: #212529;">{{ courses.course_name }}</a>
+                            </td>
+                            
+                            <td>{{ courses.city }}</td>
+                            <td>{{ courses.holes }}</td>
+                            <td>{{ courses.tee_type }}</td>
+                            <td>
+                                
+                                <form action="{% url 'courseHome' %}" method="POST">
+                                    {% csrf_token %}
+                                    {% if request.user.is_staff %}
+                                        <input type="hidden" name="id" value='{{ courses.id }}'>
+                                        <input type="hidden" name="play" value=True>
+                                        <input class="td_button btn btn-success" type="submit" value="Remove Course">
+                                    {% endif %}
+                                    <a href="{% url 'courseInfo' courses.id %}" class="td_button btn btn-info active" role="button" aria-pressed="true">Details</a>
+                                   
+                                </form>  
+                                                          
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td>No Course In Course List</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    {% if request.user.is_staff %}
+    <h2 class="table_heading" style="color:white">Delete List</h2>
+    <div class="list_table">
+        <table class="table" style='background-color: white;'>
+            <thead class="thead-dark">
+                <tr class="table_head">
+                    <th class="table_head" scope="col">Course Name</th>
+                    <th class="table_head" scope="col">City</th>
+                    <th class="table_head" scope="col">Holes</th>
+                    <th class="table_head" scope="cole">Tee Type</th>
+                    <th class="table_head" scope="col" style="text-align:right;">Delete</th>
+                </tr>
+            </thead>
+            <tbody style="background-color: white;">
+                {% if play_course %}
+                    {% for courses in play_course %}
+                        <tr>
+                            <td>{{ courses.course_name }}</td>
+                            <td>{{ courses.city }}</td>
+                            <td>{{ courses.holes }}</td>
+                            <td>{{ courses.tee_type}}</td>
+                            <td> 
+                                {% if request.user.is_staff %}
+                                <form action="{% url 'deleteCourse' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value='{{ courses.id }}'>
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                                </form>
+                                {% endif %}                            
+                                <form action="{% url 'courseHome' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id" value='{{ courses.id }}'>
+                                    <input type="hidden" name="play" value=False>
+                                    <input class="td_button btn btn-success" type="submit" value="Keep Course">
+                                </form>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td>No Courses In Play List</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
